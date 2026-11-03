@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHIRIMBOLO ESTUDIO | Calcos, Papelería Creativa, Talonarios & Invitaciones Web</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Anton (idéntica a las letras del logo Chirimbolo) + Space Grotesk & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Anton"', 'sans-serif'],
+                        grotesk: ['"Space Grotesk"', 'sans-serif'],
+                    },
+                    colors: {
+                        chiri: {
+                            black: '#111111',
+                            red: '#E30613',     /* Rojo exacto de la letra R del logo */
+                            blue: '#0062B8',    /* Azul exacto de la letra O del logo */
+                            paper: '#F6F4EE',   /* Blanco cálido papel sticker */
+                            cream: '#EFECE4'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --brand-black: #111111;
+            --brand-primary: #E30613;
+            --brand-secondary: #0062B8;
+            --brand-bg: #F6F4EE;
+        }
+
+        body {
+            background-color: var(--brand-bg);
+            color: var(--brand-black);
+            overflow-x: hidden;
+            transition: background-color 0.35s ease, color 0.35s ease;
+        }
+
+        /* Textura de papel e imprenta sutil de fondo */
+        .bg-print-grid {
+            background-image: radial-gradient(rgba(17, 17, 17, 0.12) 1.25px, transparent 1.25px);
+            background-size: 22px 22px;
+        }
+
+        /* =====================================================
+           RECREACIÓN EXACTA DEL LOGO CHIRIMBOLO + TEXTURA GRUNGE
+           ===================================================== */
+        .chiri-logo-word {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 0.01em;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            position: relative;
+        }
+
+        /* Efecto desgastado sutil tipo sello/imprenta como en el PNG original */
+        .grunge-ink {
+            color: #111111;
+            position: relative;
+        }
+
+        .cutout-r {
+            background-color: #E30613;
+            color: #F8F6F0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.06em 0.14em 0.03em 0.14em;
+            margin: 0 0.03em;
+            transform: rotate(-3.5deg) translateY(-2%);
+            box-shadow: 2px 3px 0px rgba(17,17,17,0.9);
+            clip-path: polygon(2% 0%, 100% 3%, 97% 99%, 0% 96%);
+        }
+
+        .cutout-o {
+            background-color: #0062B8;
+            color: #F8F6F0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.06em 0.14em 0.03em 0.14em;
+            margin: 0 0.03em;
+            transform: rotate(3deg) translateY(1%);
+            box-shadow: 2px 3px 0px rgba(17,17,17,0.9);
+            clip-path: polygon(0% 4%, 98% 0%, 100% 97%, 3% 100%);
+        }
+
+        /* Tarjetas y botones con estética de recorte / sticker del logo */
+        .cutout-card {
+            background: #FFFFFF;
+            border: 2.5px solid #111111;
+            box-shadow: 5px 5px 0px #111111;
+            transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .cutout-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0px #111111;
+        }
+
+        .cutout-card-red {
+            background: #FFFFFF;
+            border: 2.5px solid #111111;
+            box-shadow: 5px 5px 0px #E30613;
+        }
+
+        .cutout-card-blue {
+            background: #FFFFFF;
+            border: 2.5px solid #111111;
+            box-shadow: 5px 5px 0px #0062B8;
+        }
+
+        .cutout-btn {
+            border: 2.5px solid #111111;
+            box-shadow: 3.5px 3.5px 0px #111111;
+            transition: all 0.15s ease;
+            font-weight: 800;
+        }
+        .cutout-btn:hover {
+            transform: translate(-1.5px, -1.5px);
+            box-shadow: 5px 5px 0px #111111;
+        }
+        .cutout-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px #111111;
+        }
+
+        /* Etiquetas recortadas estilo la R y la O del logo */
+        .badge-cutout-red {
+            background-color: #E30613;
+            color: #FFFFFF;
+            display: inline-block;
+            padding: 0.2rem 0.65rem;
+            transform: rotate(-2deg);
+            font-weight: 800;
+            border: 2px solid #111111;
+            box-shadow: 2px 2px 0px #111111;
+        }
+
+        .badge-cutout-blue {
+            background-color: #0062B8;
+            color: #FFFFFF;
+            display: inline-block;
+            padding: 0.2rem 0.65rem;
+            transform: rotate(1.8deg);
+            font-weight: 800;
+            border: 2px solid #111111;
+            box-shadow: 2px 2px 0px #111111;
+        }
+
+        /* Efecto de sticker troquelado (Die-Cut) con borde blanco grueso */
+        .die-cut-sticker {
+            background: #FFFFFF;
+            padding: 8px;
+            border-radius: 22px;
+            box-shadow: 
+                0 0 0 2px #111111,
+                4px 6px 0px rgba(17, 17, 17, 0.85);
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .die-cut-sticker:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        /* Animación de entrada para las pestañas en Modo Botones */
+        .tab-fade-enter {
+            animation: tabEnter 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes tabEnter {
+            from {
+                opacity: 0;
+                transform: translateY(8px) scale(0.99);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-print-grid min-h-screen flex flex-col">
+
+    <!-- =========================================================================
+         BARRA DE DEMOSTRACIÓN PARA CLIENTES (CAMBIO EN VIVO: SCROLL vs BOTONES)
+         ========================================================================= -->
+    <header class="sticky top-0 z-50 bg-chiri-black text-white border-b-4 border-chiri-red shadow-2xl">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-2.5">
+                
+                <!-- Indicador de Modo Muestra -->
+                <div class="flex items-center gap-2.5">
+                    <span class="bg-chiri-red text-white font-display tracking-wider text-xs px-2.5 py-1 -rotate-2 border border-white shrink-0">
+                        MODO MUESTRA CLIENTES
+                    </span>
+                    <p class="text-xs sm:text-sm font-semibold text-neutral-200">
+                        Mostrale al cliente cómo funciona una web <span class="text-white underline decoration-chiri-red font-bold">con Scroll</span> vs <span class="text-white underline decoration-chiri-blue font-bold">con Botones</span>:
+                    </p>
+                </div>
+
+                <!-- Botonera de Control Principal -->
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 w-full lg:w-auto">
+                    
+                    <!-- Selector: Web Estudio vs Demo Invitación Fiesta -->
+                    <div class="bg-neutral-900 p-1 rounded-xl border border-neutral-700 flex items-center text-xs">
+                        <button id="btn-case-brand" onclick="setDemoCase('brand')" class="px-3 py-1.5 rounded-lg font-extrabold transition-all flex items-center gap-1.5 bg-white text-chiri-black shadow">
+                            <i data-lucide="Flame" class="w-3.5 h-3.5 text-chiri-red"></i>
+                            <span>Web Chirimbolo</span>
+                        </button>
+                        <button id="btn-case-event" onclick="setDemoCase('event')" class="px-3 py-1.5 rounded-lg font-bold transition-all flex items-center gap-1.5 text-neutral-300 hover:text-white">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-sky-400"></i>
+                            <span>Demo Invitación (15s / Boda)</span>
+                        </button>
+                    </div>
+
+                    <!-- Selector Principal: 1. CON SCROLL vs 2. CON BOTONES -->
+                    <div class="bg-neutral-900 p-1 rounded-xl border-2 border-white/80 flex items-center text-xs">
+                        <button id="btn-mode-scroll" onclick="setNavigationMode('scroll')" class="px-3.5 py-1.5 rounded-lg font-extrabold transition-all flex items-center gap-1.5 bg-chiri-red text-white shadow">
+                            <i data-lucide="mouse" class="w-3.5 h-3.5"></i>
+                            <span>1. Web con Scroll</span>
+                        </button>
+                        <button id="btn-mode-buttons" onclick="setNavigationMode('buttons')" class="px-3.5 py-1.5 rounded-lg font-extrabold transition-all flex items-center gap-1.5 text-neutral-300 hover:text-white">
+                            <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+                            <span>2. Web con Botones (App)</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Banda explicativa inferior -->
+        <div class="bg-neutral-900 border-t border-neutral-800 px-4 py-1 text-center text-[11px] sm:text-xs text-neutral-300 flex items-center justify-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-chiri-red animate-ping"></span>
+            <span id="explainer-text">
+                <strong>Vista activa: Web con Scroll Continuo.</strong> El cliente desliza hacia abajo para ver tus calcos, invitaciones, talonarios y cómo adaptamos todo a su logo.
+            </span>
+        </div>
+    </header>
+
+
+    <!-- =========================================================================
+         CONTENEDOR PRINCIPAL
+         ========================================================================= -->
+    <main class="flex-grow">
+
+        <!-- =====================================================================
+             CASO 1: PÁGINA WEB DE "CHIRIMBOLO ESTUDIO" (BASADA 100% EN EL LOGO)
+             ===================================================================== -->
+        <div id="case-brand-wrapper">
+
+            <!-- -----------------------------------------------------------------
+                 1A. CHIRIMBOLO EN MODO SCROLL CONTINUO
+                 ----------------------------------------------------------------- -->
+            <div id="brand-scroll-view" class="space-y-16 sm:space-y-24 pb-24">
+
+                <!-- Barra de Navegación con el Logo Oficial -->
+                <nav class="max-w-6xl mx-auto px-4 pt-6">
+                    <div class="cutout-card rounded-2xl px-4 sm:px-7 py-3.5 flex flex-wrap items-center justify-between gap-4 bg-white">
+                        
+                        <!-- Logo Oficial (Carga la imagen real si está en la carpeta o muestra la réplica vectorial idéntica) -->
+                        <a href="#" class="flex items-center gap-2 group" title="Chirimbolo Estudio">
+                            <img src="Chirimbolo Estudio sin fondo.png" alt="Chirimbolo Estudio Logo" class="h-10 sm:h-12 w-auto object-contain hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');">
+                            <!-- Réplica Vectorial Exacta del Logo subido -->
+                            <div class="flex flex-col items-center select-none">
+                                <div class="chiri-logo-word text-2xl sm:text-3xl tracking-tight">
+                                    <span class="grunge-ink">CHI</span>
+                                    <span class="cutout-r">R</span>
+                                    <span class="grunge-ink">IMB</span>
+                                    <span class="cutout-o">O</span>
+                                    <span class="grunge-ink">LO</span>
+                                </div>
+                                <div class="flex items-center w-full gap-1.5 -mt-0.5">
+                                    <span class="h-[2px] bg-chiri-black flex-grow"></span>
+                                    <span class="font-sans font-black text-[8px] sm:text-[9px] tracking-[0.38em] text-chiri-black pl-1">ESTUDIO</span>
+                                    <span class="h-[2px] bg-chiri-black flex-grow"></span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Links de navegación rápida (Scroll) -->
+                        <div class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-wider font-extrabold text-chiri-black">
+                            <a href="#identidad-logo" class="hover:text-chiri-red transition">Tu Logo = Tu Web</a>
+                            <a href="#calcos-personalizadas" class="hover:text-chiri-blue transition">Calcos (Packs x5 / x10)</a>
+                            <a href="#invitaciones-web" class="hover:text-chiri-red transition">Invitaciones Web</a>
+                            <a href="#papeleria-talonarios" class="hover:text-chiri-blue transition">Papelería & Talonarios</a>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <button onclick="setNavigationMode('buttons')" class="hidden sm:inline-flex cutout-btn bg-chiri-blue text-white text-xs px-3.5 py-2 rounded-xl items-center gap-1.5">
+                                <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+                                <span>Ver con Botones</span>
+                            </button>
+                            <button onclick="openModal('presupuesto')" class="cutout-btn bg-chiri-red text-white text-xs px-4 py-2 rounded-xl flex items-center gap-1.5">
+                                <i data-lucide="message-square-plus" class="w-3.5 h-3.5"></i>
+                                <span>Consultar</span>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- HERO PRINCIPAL CON EL LOGO GIGANTE Y ESTÉTICA COLLAGE -->
+                <section class="max-w-6xl mx-auto px-4">
+                    <div class="cutout-card rounded-3xl p-6 sm:p-12 bg-white relative overflow-hidden">
+                        
+                        <!-- Decoración esquinera inspirada en el rojo y azul del logo -->
+                        <div class="absolute -top-6 -right-6 w-28 h-28 bg-chiri-blue/10 rounded-full pointer-events-none"></div>
+                        <div class="absolute -bottom-8 -left-8 w-36 h-36 bg-chiri-red/10 rounded-full pointer-events-none"></div>
+
+                        <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+                            
+                            <!-- Columna Izquierda: Impacto de Marca -->
+                            <div class="lg:col-span-7 space-y-6">
+                                <div class="inline-flex flex-wrap items-center gap-2">
+                                    <span class="badge-cutout-red text-xs uppercase tracking-wider">DISEÑO CON IDENTIDAD</span>
+                                    <span class="badge-cutout-blue text-xs uppercase tracking-wider">IMPRENTA CREATIVA & WEB</span>
+                                </div>
+
+                                <!-- Bloque del Logo Gigante en el Hero -->
+                                <div class="bg-chiri-paper border-2 border-chiri-black rounded-2xl p-5 sm:p-6 inline-block shadow-[4px_4px_0px_#111111]">
+                                    <img src="Chirimbolo Estudio sin fondo.png" alt="Chirimbolo Estudio" class="max-h-28 sm:max-h-36 w-auto mx-auto hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');">
+                                    <div class="flex flex-col items-center select-none">
+                                        <div class="chiri-logo-word text-5xl sm:text-7xl md:text-8xl">
+                                            <span class="grunge-ink">CHI</span>
+                                            <span class="cutout-r">R</span>
+                                            <span class="grunge-ink">IMB</span>
+                                            <span class="cutout-o">O</span>
+                                            <span class="grunge-ink">LO</span>
+                                        </div>
+                                        <div class="flex items-center w-full gap-3 mt-1">
+                                            <span class="h-[3px] sm:h-[4px] bg-chiri-black flex-grow"></span>
+                                            <span class="font-sans font-black text-xs sm:text-base tracking-[0.45em] text-chiri-black pl-1.5">ESTUDIO</span>
+                                            <span class="h-[3px] sm:h-[4px] bg-chiri-black flex-grow"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h1 class="font-grotesk font-bold text-2xl sm:text-4xl text-chiri-black leading-tight">
+                                    Transformamos tus fotos, tu marca o tu fiesta en <span class="bg-chiri-red text-white px-2 py-0.5 inline-block -rotate-1">calcos</span>, <span class="bg-chiri-blue text-white px-2 py-0.5 inline-block rotate-1">papelería</span> y <span class="underline decoration-4 decoration-chiri-red">webs únicas</span>.
+                                </h1>
+
+                                <p class="text-sm sm:text-base text-neutral-700 font-medium leading-relaxed">
+                                    ¿Viste cómo esta página usa el <strong>negro, el rojo de la "R" y el azul de la "O"</strong> con bordes tipo recorte igualitos a nuestro logo? Cuando hacemos tu web, tus talonarios o la invitación de tu evento, <strong>nos guiamos 100% por tu estética para que todo conecte</strong>.
+                                </p>
+
+                                <div class="flex flex-wrap gap-3 pt-1">
+                                    <a href="#calcos-personalizadas" class="cutout-btn bg-chiri-red text-white px-6 py-3.5 rounded-xl text-sm sm:text-base flex items-center gap-2">
+                                        <i data-lucide="dog" class="w-5 h-5"></i>
+                                        <span>Armar Pack de Calcos</span>
+                                    </a>
+                                    <a href="#identidad-logo" class="cutout-btn bg-chiri-black text-white px-5 py-3.5 rounded-xl text-sm sm:text-base flex items-center gap-2">
+                                        <i data-lucide="wand-2" class="w-5 h-5 text-sky-400"></i>
+                                        <span>Probar cómo se adapta a TU Logo</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Columna Derecha: Mosaico Visual de lo que hacemos -->
+                            <div class="lg:col-span-5 grid grid-cols-2 gap-3.5">
+                                
+                                <!-- Tarjeta 1: Calcos Mascotas / Fotos -->
+                                <a href="#calcos-personalizadas" class="cutout-card-red rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1 transition bg-white">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="w-10 h-10 rounded-xl bg-chiri-red text-white border-2 border-chiri-black flex items-center justify-center">
+                                            <i data-lucide="camera" class="w-5 h-5"></i>
+                                        </span>
+                                        <span class="text-[10px] font-black uppercase bg-neutral-100 border border-chiri-black px-2 py-0.5 rounded">4, 6 y 8 cm</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-display text-xl tracking-wide text-chiri-black">CALCOS MASCOTAS & FOTOS</h3>
+                                        <p class="text-xs text-neutral-600 mt-1 font-medium">Packs x5 o x10 unidades troqueladas.</p>
+                                    </div>
+                                </a>
+
+                                <!-- Tarjeta 2: Invitaciones Digitales Web -->
+                                <a href="#invitaciones-web" class="cutout-card-blue rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1 transition bg-white">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="w-10 h-10 rounded-xl bg-chiri-blue text-white border-2 border-chiri-black flex items-center justify-center">
+                                            <i data-lucide="smartphone" class="w-5 h-5"></i>
+                                        </span>
+                                        <span class="text-[10px] font-black uppercase bg-neutral-100 border border-chiri-black px-2 py-0.5 rounded">Scroll o App</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-display text-xl tracking-wide text-chiri-black">INVITACIONES WEB</h3>
+                                        <p class="text-xs text-neutral-600 mt-1 font-medium">15 años, Casamientos y Eventos interactivos.</p>
+                                    </div>
+                                </a>
+
+                                <!-- Tarjeta 3: Papelería Creativa Eventos -->
+                                <a href="#papeleria-talonarios" class="cutout-card-blue rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1 transition bg-white">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="w-10 h-10 rounded-xl bg-chiri-black text-white border-2 border-chiri-black flex items-center justify-center">
+                                            <i data-lucide="gift" class="w-5 h-5"></i>
+                                        </span>
+                                        <span class="text-[10px] font-black uppercase bg-neutral-100 border border-chiri-black px-2 py-0.5 rounded">A medida</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-display text-xl tracking-wide text-chiri-black">PAPELERÍA CREATIVA</h3>
+                                        <p class="text-xs text-neutral-600 mt-1 font-medium">Candy bar, toppers, bolsitas, tags y cierres.</p>
+                                    </div>
+                                </a>
+
+                                <!-- Tarjeta 4: Talonarios y Comercial -->
+                                <a href="#papeleria-talonarios" class="cutout-card-red rounded-2xl p-4 flex flex-col justify-between hover:-translate-y-1 transition bg-white">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="w-10 h-10 rounded-xl bg-amber-400 text-chiri-black border-2 border-chiri-black flex items-center justify-center">
+                                            <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+                                        </span>
+                                        <span class="text-[10px] font-black uppercase bg-neutral-100 border border-chiri-black px-2 py-0.5 rounded">Tu Marca</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-display text-xl tracking-wide text-chiri-black">TALONARIOS & MERCH</h3>
+                                        <p class="text-xs text-neutral-600 mt-1 font-medium">Recibos, presupuestos, rifas, vouchers y más.</p>
+                                    </div>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- =============================================================
+                     SECCIÓN CLAVE PARA EL CLIENTE: "MIRÁ CÓMO NOS ORIENTAMOS POR EL LOGO"
+                     Permite demostrar en vivo cómo el diseño sigue la estética de cada cliente
+                     ============================================================= -->
+                <section id="identidad-logo" class="max-w-6xl mx-auto px-4">
+                    <div class="cutout-card rounded-3xl p-6 sm:p-10 bg-chiri-black text-white relative overflow-hidden">
+                        
+                        <div class="grid lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-6 space-y-4">
+                                <span class="badge-cutout-red text-xs uppercase">CONEXIÓN VISUAL CON TU MARCA</span>
+                                <h2 class="font-display text-3xl sm:text-5xl tracking-wide leading-none text-white">
+                                    ¿VES CÓMO TODA LA WEB NACE DE NUESTRO LOGO? <span class="text-sky-400">¡EL TUYO PUEDE QUEDAR IGUAL!</span>
+                                </h2>
+                                <p class="text-sm sm:text-base text-neutral-300 leading-relaxed">
+                                    No usamos plantillas aburridas iguales para todos. Analizamos las letras, los colores y la onda de tu logo (o la temática de tus 15 / casamiento) para que quien entre sienta tu identidad al instante.
+                                </p>
+
+                                <!-- Explicación de los 3 elementos tomados del logo de Chirimbolo -->
+                                <div class="grid grid-cols-3 gap-2.5 pt-2">
+                                    <div class="bg-neutral-900 border border-neutral-700 rounded-xl p-3">
+                                        <span class="inline-block w-6 h-6 rounded bg-chiri-red border border-white font-display text-center leading-6 text-xs mb-1">R</span>
+                                        <p class="text-xs font-bold text-white">Recorte Rojo</p>
+                                        <p class="text-[11px] text-neutral-400">Inspira los botones de acción y etiquetas inclinadas.</p>
+                                    </div>
+                                    <div class="bg-neutral-900 border border-neutral-700 rounded-xl p-3">
+                                        <span class="inline-block w-6 h-6 rounded bg-chiri-blue border border-white font-display text-center leading-6 text-xs mb-1">O</span>
+                                        <p class="text-xs font-bold text-white">Recorte Azul</p>
+                                        <p class="text-[11px] text-neutral-400">Da contraste a las tarjetas, packs y filtros.</p>
+                                    </div>
+                                    <div class="bg-neutral-900 border border-neutral-700 rounded-xl p-3">
+                                        <span class="inline-block w-6 h-6 rounded bg-white text-chiri-black font-display text-center leading-6 text-xs mb-1">C</span>
+                                        <p class="text-xs font-bold text-white">Tinta & Papel</p>
+                                        <p class="text-[11px] text-neutral-400">Bordes firmes de imprenta y textura sticker.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SIMULADOR EN VIVO: "Probá cómo se adapta una tarjeta según el logo del cliente" -->
+                            <div class="lg:col-span-6">
+                                <div class="bg-neutral-900 border-2 border-white rounded-2xl p-5 space-y-4">
+                                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-neutral-800 pb-3">
+                                        <span class="text-xs font-extrabold uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
+                                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                                            Probador de Identidad para Clientes:
+                                        </span>
+                                        <span class="text-[11px] text-neutral-400">Tocá un estilo para ver el cambio</span>
+                                    </div>
+
+                                    <!-- Botones de prueba de estilo -->
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <button onclick="previewClientStyle('chirimbolo')" id="style-btn-chirimbolo" class="p-2 rounded-xl border-2 border-chiri-red bg-chiri-red/20 text-white text-xs font-bold text-center transition">
+                                            1. Estilo Chirimbolo<br><span class="text-[10px] font-normal text-neutral-300">(Sticker / Urbano)</span>
+                                        </button>
+                                        <button onclick="previewClientStyle('boda')" id="style-btn-boda" class="p-2 rounded-xl border border-neutral-700 bg-neutral-800 text-neutral-300 hover:text-white text-xs font-bold text-center transition">
+                                            2. Ejemplo 15s / Boda<br><span class="text-[10px] font-normal text-neutral-400">(Elegante / Dorado)</span>
+                                        </button>
+                                        <button onclick="previewClientStyle('pastel')" id="style-btn-pastel" class="p-2 rounded-xl border border-neutral-700 bg-neutral-800 text-neutral-300 hover:text-white text-xs font-bold text-center transition">
+                                            3. Ejemplo Emprendedor<br><span class="text-[10px] font-normal text-neutral-400">(Pastelería / Suave)</span>
+                                        </button>
+                                    </div>
+
+                                    <!-- Tarjeta de muestra que se transforma según el logo elegido -->
+                                    <div id="live-identity-preview" class="rounded-2xl p-5 transition-all duration-300 bg-[#F6F4EE] text-chiri-black border-2 border-chiri-black shadow-[4px_4px_0px_#E30613]">
+                                        <!-- Rellenado dinámicamente por JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <!-- =============================================================
+                     SECCIÓN ESTRELLA 1: CALCOS PERSONALIZADAS (MASCOTAS/FOTOS) Y COMUNES
+                     Con Armador de Packs x5 y x10 | Tamaños 4 cm, 6 cm y 8 cm
+                     ============================================================= -->
+                <section id="calcos-personalizadas" class="max-w-6xl mx-auto px-4">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="badge-cutout-red text-xs">RESISTENTES AL AGUA</span>
+                                <span class="badge-cutout-blue text-xs">TROQUELADO INDIVIDUAL</span>
+                            </div>
+                            <h2 class="font-display text-4xl sm:text-5xl text-chiri-black tracking-wide">
+                                CALCOS PERSONALIZADAS & COMUNES
+                            </h2>
+                            <p class="text-sm sm:text-base text-neutral-700 font-medium mt-1">
+                                Mandanos la foto de tu mascota, amigos, tu logo o elegí de nuestro catálogo. Vienen listas para pegar en el termo, mate, celu o notebook.
+                            </p>
+                        </div>
+                        <div class="bg-white border-2 border-chiri-black px-4 py-2 rounded-xl shadow-[3px_3px_0px_#111111] text-xs font-extrabold shrink-0">
+                            📦 Packs de <span class="text-chiri-red">5 o 10 unidades</span> • Medidas: <span class="text-chiri-blue">4, 6 y 8 cm</span>
+                        </div>
+                    </div>
+
+                    <!-- ARMADOR INTERACTIVO DE PACK DE CALCOS + COMPARADOR DE MEDIDAS -->
+                    <div class="grid lg:grid-cols-12 gap-8 items-start">
+                        
+                        <!-- Columna Izquierda (7 cols): Configurador Paso a Paso -->
+                        <div class="lg:col-span-7 cutout-card rounded-3xl p-6 sm:p-8 bg-white space-y-6">
+                            <div class="flex items-center justify-between border-b-2 border-chiri-black pb-4">
+                                <h3 class="font-display text-2xl sm:text-3xl tracking-wide text-chiri-black">
+                                    ARMÁ TU PACK DE CALCOS EN 3 PASOS
+                                </h3>
+                                <span class="bg-chiri-black text-white text-xs font-bold px-3 py-1 rounded-full">Simulador en Vivo</span>
+                            </div>
+
+                            <!-- PASO 1: Tipo de Calco -->
+                            <div class="space-y-2.5">
+                                <label class="text-xs font-black uppercase tracking-wider text-chiri-black flex items-center gap-1.5">
+                                    <span class="w-5 h-5 rounded bg-chiri-red text-white inline-flex items-center justify-center font-display">1</span>
+                                    <span>ELEGÍ EL TIPO DE CALCO:</span>
+                                </label>
+                                <div class="grid sm:grid-cols-2 gap-3">
+                                    <button onclick="updateStickerBuilder('type', 'Mascotas o Fotos Personalizadas')" id="stk-type-custom" class="stk-option-btn cutout-btn bg-chiri-red text-white p-3.5 rounded-2xl text-left flex items-start gap-3">
+                                        <div class="w-10 h-10 rounded-xl bg-white text-chiri-black border-2 border-chiri-black flex items-center justify-center shrink-0">
+                                            <i data-lucide="dog" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-extrabold text-sm">Personalizadas (Mascotas / Fotos / Logos)</div>
+                                            <div class="text-[11px] opacity-90 font-medium mt-0.5">Nos pasás las fotos de tu perro, michi, familia o marca y las recortamos con borde sticker.</div>
+                                        </div>
+                                    </button>
+                                    <button onclick="updateStickerBuilder('type', 'Calcos Comunes / De Catálogo')" id="stk-type-common" class="stk-option-btn cutout-btn bg-white text-chiri-black p-3.5 rounded-2xl text-left flex items-start gap-3">
+                                        <div class="w-10 h-10 rounded-xl bg-chiri-blue text-white border-2 border-chiri-black flex items-center justify-center shrink-0">
+                                            <i data-lucide="Flame" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-extrabold text-sm">Calcos Comunes (De Catálogo)</div>
+                                            <div class="text-[11px] text-neutral-600 font-medium mt-0.5">Diseños listos de frases, música, fútbol, memes, series, anime y onda Chirimbolo.</div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- PASO 2: Cantidad del Pack (5 o 10 unidades) -->
+                            <div class="space-y-2.5">
+                                <label class="text-xs font-black uppercase tracking-wider text-chiri-black flex items-center gap-1.5">
+                                    <span class="w-5 h-5 rounded bg-chiri-blue text-white inline-flex items-center justify-center font-display">2</span>
+                                    <span>ELEGÍ LA CANTIDAD DEL PACK:</span>
+                                </label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <button onclick="updateStickerBuilder('pack', 'Pack x 5 Unidades')" id="stk-pack-5" class="cutout-btn bg-white text-chiri-black py-3 px-4 rounded-xl text-center">
+                                        <span class="font-display text-2xl block">PACK x 5 UNIDADES</span>
+                                        <span class="text-xs font-semibold text-neutral-600">Ideal para regalo o probar</span>
+                                    </button>
+                                    <button onclick="updateStickerBuilder('pack', 'Pack x 10 Unidades')" id="stk-pack-10" class="cutout-btn bg-chiri-blue text-white py-3 px-4 rounded-xl text-center">
+                                        <span class="font-display text-2xl block">PACK x 10 UNIDADES ★</span>
+                                        <span class="text-xs font-semibold text-sky-100">¡El más pedido para el termo!</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- PASO 3: Medida de las Calcos (4 cm, 6 cm o 8 cm) -->
+                            <div class="space-y-2.5">
+                                <label class="text-xs font-black uppercase tracking-wider text-chiri-black flex items-center gap-1.5">
+                                    <span class="w-5 h-5 rounded bg-chiri-black text-white inline-flex items-center justify-center font-display">3</span>
+                                    <span>ELEGÍ LA MEDIDA (MIRÁ LA ESCALA A LA DERECHA):</span>
+                                </label>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <button onclick="updateStickerBuilder('size', '4 cm')" id="stk-size-4" class="cutout-btn bg-white text-chiri-black py-3 px-2 rounded-xl text-center">
+                                        <span class="font-display text-2xl block">4 CM</span>
+                                        <span class="text-[11px] font-bold text-neutral-500">Para Celu / Mate</span>
+                                    </button>
+                                    <button onclick="updateStickerBuilder('size', '6 cm')" id="stk-size-6" class="cutout-btn bg-chiri-black text-white py-3 px-2 rounded-xl text-center">
+                                        <span class="font-display text-2xl block">6 CM</span>
+                                        <span class="text-[11px] font-bold text-amber-300">Medida Clásica</span>
+                                    </button>
+                                    <button onclick="updateStickerBuilder('size', '8 cm')" id="stk-size-8" class="cutout-btn bg-white text-chiri-black py-3 px-2 rounded-xl text-center">
+                                        <span class="font-display text-2xl block">8 CM</span>
+                                        <span class="text-[11px] font-bold text-neutral-500">Termo / Notebook</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Resumen del Pack Armado + Botón de Pedido -->
+                            <div class="bg-chiri-paper border-2 border-chiri-black rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                <div>
+                                    <span class="text-[11px] font-black uppercase tracking-wider text-chiri-red block">RESUMEN DE TU SELECCIÓN:</span>
+                                    <p id="sticker-summary-text" class="font-grotesk font-bold text-base sm:text-lg text-chiri-black">
+                                        Mascotas o Fotos Personalizadas • Pack x 10 Unidades • Medida 6 cm
+                                    </p>
+                                </div>
+                                <button onclick="orderStickerPack()" class="w-full sm:w-auto cutout-btn bg-chiri-red text-white px-5 py-3 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shrink-0">
+                                    <i data-lucide="send" class="w-4 h-4"></i>
+                                    <span>Pedir este Pack por WhatsApp</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Columna Derecha (5 cols): Comparador Visual de Tamaños (4cm, 6cm, 8cm) + Ejemplos Mascotas -->
+                        <div class="lg:col-span-5 space-y-5">
+                            
+                            <!-- Comparador de escala visual -->
+                            <div class="cutout-card-blue rounded-3xl p-6 bg-white space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="font-display text-xl tracking-wide text-chiri-black">COMPARADOR DE TAMAÑOS REAL</h4>
+                                    <span id="active-size-badge" class="badge-cutout-blue text-xs">Seleccionado: 6 cm</span>
+                                </div>
+                                <p class="text-xs text-neutral-600 font-medium">
+                                    Tocá 4 cm, 6 cm u 8 cm para que el cliente vea cómo luce la calco troquelada con borde blanco:
+                                </p>
+
+                                <!-- Escenario visual con las 3 medidas de calco de mascota -->
+                                <div class="bg-chiri-paper border-2 border-chiri-black rounded-2xl p-5 flex items-end justify-around min-h-[190px] relative overflow-hidden">
+                                    
+                                    <!-- Calco 4 cm -->
+                                    <div onclick="updateStickerBuilder('size', '4 cm')" id="visual-stk-4" class="cursor-pointer flex flex-col items-center gap-2 transition-all opacity-75 hover:opacity-100">
+                                        <div class="die-cut-sticker w-14 h-14 flex flex-col items-center justify-center bg-amber-100 text-chiri-black">
+                                            <span class="text-2xl leading-none">🐶</span>
+                                        </div>
+                                        <span class="font-display text-sm bg-white px-2 py-0.5 rounded border border-chiri-black">4 CM</span>
+                                    </div>
+
+                                    <!-- Calco 6 cm -->
+                                    <div onclick="updateStickerBuilder('size', '6 cm')" id="visual-stk-6" class="cursor-pointer flex flex-col items-center gap-2 transition-all scale-110">
+                                        <div class="die-cut-sticker w-20 h-20 flex flex-col items-center justify-center bg-rose-100 text-chiri-black ring-4 ring-chiri-red">
+                                            <span class="text-4xl leading-none">🐾</span>
+                                            <span class="font-display text-[10px] mt-0.5 bg-chiri-red text-white px-1.5 rounded">TU FOTO</span>
+                                        </div>
+                                        <span class="font-display text-base bg-chiri-red text-white px-2.5 py-0.5 rounded border border-chiri-black">6 CM ★</span>
+                                    </div>
+
+                                    <!-- Calco 8 cm -->
+                                    <div onclick="updateStickerBuilder('size', '8 cm')" id="visual-stk-8" class="cursor-pointer flex flex-col items-center gap-2 transition-all opacity-75 hover:opacity-100">
+                                        <div class="die-cut-sticker w-28 h-28 flex flex-col items-center justify-center bg-sky-100 text-chiri-black">
+                                            <span class="text-5xl leading-none">🐱</span>
+                                            <span class="font-display text-xs mt-1 bg-chiri-blue text-white px-2 rounded">MAXI 8CM</span>
+                                        </div>
+                                        <span class="font-display text-sm bg-white px-2 py-0.5 rounded border border-chiri-black">8 CM</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-2 text-[11px] font-bold text-chiri-black">
+                                    <div class="bg-neutral-100 p-2.5 rounded-xl border border-chiri-black flex items-center gap-2">
+                                        <i data-lucide="droplets" class="w-4 h-4 text-chiri-blue shrink-0"></i>
+                                        <span>100% Lavables (Aptas Termo y Mate)</span>
+                                    </div>
+                                    <div class="bg-neutral-100 p-2.5 rounded-xl border border-chiri-black flex items-center gap-2">
+                                        <i data-lucide="scissors" class="w-4 h-4 text-chiri-red shrink-0"></i>
+                                        <span>Corte con la forma de tu mascota</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- =============================================================
+                     SECCIÓN ESTRELLA 2: INVITACIONES DIGITALES WEB (15 AÑOS, CASAMIENTOS, EVENTOS)
+                     ============================================================= -->
+                <section id="invitaciones-web" class="max-w-6xl mx-auto px-4">
+                    <div class="cutout-card rounded-3xl p-6 sm:p-10 bg-white relative overflow-hidden">
+                        <div class="grid lg:grid-cols-12 gap-8 items-center">
+                            
+                            <div class="lg:col-span-7 space-y-5">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span class="badge-cutout-blue text-xs uppercase">15 AÑOS • CASAMIENTOS • EGRESADOS • CUMPLES</span>
+                                    <span class="badge-cutout-red text-xs uppercase">CON SCROLL O CON BOTONES</span>
+                                </div>
+                                <h2 class="font-display text-4xl sm:text-5xl text-chiri-black tracking-wide leading-none">
+                                    INVITACIONES DIGITALES WEB INTERACTIVAS
+                                </h2>
+                                <p class="text-sm sm:text-base text-neutral-700 font-medium leading-relaxed">
+                                    Olvidate del PDF estático donde nadie puede tocar nada. Diseñamos una página web exclusiva para tu fiesta, adaptada a los colores de tu vestido o salón, lista para mandar por WhatsApp.
+                                </p>
+
+                                <!-- Qué incluyen las invitaciones de Chirimbolo -->
+                                <div class="grid sm:grid-cols-2 gap-3 pt-1">
+                                    <div class="bg-chiri-paper border-2 border-chiri-black rounded-xl p-3 flex items-start gap-2.5">
+                                        <i data-lucide="clock" class="w-5 h-5 text-chiri-red shrink-0 mt-0.5"></i>
+                                        <div>
+                                            <h4 class="font-bold text-xs sm:text-sm">Cuenta Regresiva en Vivo</h4>
+                                            <p class="text-xs text-neutral-600">Días, horas, minutos y segundos latiendo en tiempo real.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-chiri-paper border-2 border-chiri-black rounded-xl p-3 flex items-start gap-2.5">
+                                        <i data-lucide="check-square" class="w-5 h-5 text-chiri-blue shrink-0 mt-0.5"></i>
+                                        <div>
+                                            <h4 class="font-bold text-xs sm:text-sm">Confirmación a tu WhatsApp</h4>
+                                            <p class="text-xs text-neutral-600">Tus invitados confirman asistencia y menú especial con 1 clic.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-chiri-paper border-2 border-chiri-black rounded-xl p-3 flex items-start gap-2.5">
+                                        <i data-lucide="music" class="w-5 h-5 text-chiri-red shrink-0 mt-0.5"></i>
+                                        <div>
+                                            <h4 class="font-bold text-xs sm:text-sm">Playlist Colaborativa & Dress Code</h4>
+                                            <p class="text-xs text-neutral-600">Botón para sugerir canciones que no pueden faltar en la fiesta.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-chiri-paper border-2 border-chiri-black rounded-xl p-3 flex items-start gap-2.5">
+                                        <i data-lucide="map-pin" class="w-5 h-5 text-chiri-blue shrink-0 mt-0.5"></i>
+                                        <div>
+                                            <h4 class="font-bold text-xs sm:text-sm">GPS Google Maps + Alias Regalo</h4>
+                                            <p class="text-xs text-neutral-600">Cómo llegar al salón y botón para copiar tu CBU/Alias.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Botones para abrir la Demo de 15 Años en ambos formatos -->
+                                <div class="flex flex-wrap gap-3 pt-2">
+                                    <button onclick="setDemoCase('event'); setNavigationMode('scroll');" class="cutout-btn bg-chiri-red text-white px-5 py-3 rounded-xl text-xs sm:text-sm flex items-center gap-2">
+                                        <i data-lucide="mouse" class="w-4 h-4"></i>
+                                        <span>Probar Invitación con Scroll</span>
+                                    </button>
+                                    <button onclick="setDemoCase('event'); setNavigationMode('buttons');" class="cutout-btn bg-chiri-blue text-white px-5 py-3 rounded-xl text-xs sm:text-sm flex items-center gap-2">
+                                        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                                        <span>Probar Invitación con Botones</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Vista previa estilo celular de la invitación -->
+                            <div class="lg:col-span-5 flex justify-center">
+                                <div class="w-full max-w-xs bg-chiri-black text-white rounded-[32px] p-4 border-4 border-chiri-black shadow-[8px_8px_0px_#0062B8] space-y-4">
+                                    <div class="w-16 h-1.5 bg-neutral-700 rounded-full mx-auto"></div>
+                                    <div class="bg-gradient-to-b from-neutral-900 to-neutral-800 border border-neutral-700 rounded-2xl p-5 text-center space-y-3">
+                                        <span class="text-[10px] font-bold uppercase tracking-widest text-amber-300 bg-white/10 px-2.5 py-0.5 rounded-full">Demo Interactiva</span>
+                                        <h3 class="font-display text-3xl tracking-wide text-white">MIS 15 • VALENTINA</h3>
+                                        <div class="grid grid-cols-4 gap-1.5 text-center">
+                                            <div class="bg-black/50 p-1.5 rounded-lg border border-white/15">
+                                                <span class="font-display text-lg text-amber-300 block">24</span>
+                                                <span class="text-[9px] uppercase">Días</span>
+                                            </div>
+                                            <div class="bg-black/50 p-1.5 rounded-lg border border-white/15">
+                                                <span class="font-display text-lg text-amber-300 block">18</span>
+                                                <span class="text-[9px] uppercase">Hs</span>
+                                            </div>
+                                            <div class="bg-black/50 p-1.5 rounded-lg border border-white/15">
+                                                <span class="font-display text-lg text-amber-300 block">45</span>
+                                                <span class="text-[9px] uppercase">Min</span>
+                                            </div>
+                                            <div class="bg-black/50 p-1.5 rounded-lg border border-white/15">
+                                                <span class="cd-secs font-display text-lg text-chiri-red block">39</span>
+                                                <span class="text-[9px] uppercase">Seg</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-[11px] text-neutral-300">Podés mostrársela a tus clientes con <strong>Scroll</strong> o con <strong>Botonera estilo App</strong>.</p>
+                                        <button onclick="setDemoCase('event')" class="w-full cutout-btn bg-amber-400 text-chiri-black py-2 rounded-xl text-xs">
+                                            Abrir Demo de Fiesta en Pantalla Completa →
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- =============================================================
+                     SECCIÓN ESTRELLA 3: PAPELERÍA CREATIVA, TALONARIOS Y COMPLEMENTOS
+                     ============================================================= -->
+                <section id="papeleria-talonarios" class="max-w-6xl mx-auto px-4">
+                    <div class="text-center max-w-3xl mx-auto mb-10 space-y-2">
+                        <span class="badge-cutout-red text-xs uppercase">DISEÑO IMPRESO & GRÁFICA PARA EVENTOS Y COMERCIOS</span>
+                        <h2 class="font-display text-4xl sm:text-5xl text-chiri-black tracking-wide">
+                            PAPELERÍA CREATIVA, TALONARIOS & MÁS
+                        </h2>
+                        <p class="text-sm sm:text-base text-neutral-700 font-medium">
+                            Todo lo que tu evento o tu emprendimiento necesita para verse súper profesional, diseñado desde cero con tus colores.
+                        </p>
+                    </div>
+
+                    <!-- Filtros de Categorías del Catálogo General -->
+                    <div class="flex flex-wrap justify-center gap-2 mb-8" id="scroll-catalog-filters">
+                        <button onclick="filterCatalog('all')" data-cat="all" class="cat-filter-btn cutout-btn bg-chiri-black text-white text-xs px-4 py-2 rounded-xl">Todo el Catálogo</button>
+                        <button onclick="filterCatalog('calcos')" data-cat="calcos" class="cat-filter-btn cutout-btn bg-white text-chiri-black text-xs px-4 py-2 rounded-xl">Calcos (Mascotas y Comunes)</button>
+                        <button onclick="filterCatalog('talonarios')" data-cat="talonarios" class="cat-filter-btn cutout-btn bg-white text-chiri-black text-xs px-4 py-2 rounded-xl">Talonarios & Comercios</button>
+                        <button onclick="filterCatalog('papeleria')" data-cat="papeleria" class="cat-filter-btn cutout-btn bg-white text-chiri-black text-xs px-4 py-2 rounded-xl">Papelería Creativa Eventos</button>
+                        <button onclick="filterCatalog('web')" data-cat="web" class="cat-filter-btn cutout-btn bg-white text-chiri-black text-xs px-4 py-2 rounded-xl">Invitaciones & Webs</button>
+                    </div>
+
+                    <!-- Grilla Dinámica de Productos y Servicios -->
+                    <div id="catalog-items-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Se inyecta por JS -->
+                    </div>
+                </section>
+
+            </div>
+
+
+            <!-- -----------------------------------------------------------------
+                 1B. CHIRIMBOLO EN MODO BOTONES / APP (SIN SCROLL LARGO)
+                 ----------------------------------------------------------------- -->
+            <div id="brand-buttons-view" class="hidden max-w-5xl mx-auto px-4 py-6 sm:py-10">
+                <div class="cutout-card rounded-3xl overflow-hidden bg-white">
+                    
+                    <!-- Cabecera compacta con el Logo Oficial -->
+                    <div class="bg-chiri-paper border-b-2 border-chiri-black p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-white border-2 border-chiri-black px-3.5 py-2 rounded-xl shadow-[3px_3px_0px_#111111]">
+                                <div class="chiri-logo-word text-2xl sm:text-3xl">
+                                    <span class="grunge-ink">CHI</span>
+                                    <span class="cutout-r">R</span>
+                                    <span class="grunge-ink">IMB</span>
+                                    <span class="cutout-o">O</span>
+                                    <span class="grunge-ink">LO</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="badge-cutout-red text-[10px] uppercase">MODO INTERACTIVO POR BOTONES</span>
+                                <h2 class="font-grotesk font-bold text-lg sm:text-xl text-chiri-black mt-1">
+                                    Tocá cada botón para cambiar de pantalla sin hacer scroll
+                                </h2>
+                            </div>
+                        </div>
+
+                        <button onclick="setNavigationMode('scroll')" class="cutout-btn bg-white text-chiri-black text-xs px-3.5 py-2 rounded-xl shrink-0">
+                            ← Volver a Vista con Scroll
+                        </button>
+                    </div>
+
+                    <!-- BOTONERA DE NAVEGACIÓN ESTILO APP (INSPIRADA EN EL LOGO) -->
+                    <div class="bg-chiri-black p-3 sm:p-4 border-b-2 border-chiri-black">
+                        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+                            <button onclick="switchBrandTab('inicio')" data-tab="inicio" class="brand-tab-btn cutout-btn bg-chiri-red text-white py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                                <i data-lucide="flame" class="w-4 h-4"></i>
+                                <span>1. Inicio & Logo</span>
+                            </button>
+                            <button onclick="switchBrandTab('calcos')" data-tab="calcos" class="brand-tab-btn cutout-btn bg-white text-chiri-black py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                                <i data-lucide="dog" class="w-4 h-4 text-chiri-red"></i>
+                                <span>2. Calcos (4,6,8cm)</span>
+                            </button>
+                            <button onclick="switchBrandTab('invitaciones')" data-tab="invitaciones" class="brand-tab-btn cutout-btn bg-white text-chiri-black py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                                <i data-lucide="smartphone" class="w-4 h-4 text-chiri-blue"></i>
+                                <span>3. Invitaciones Web</span>
+                            </button>
+                            <button onclick="switchBrandTab('papeleria')" data-tab="papeleria" class="brand-tab-btn cutout-btn bg-white text-chiri-black py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                                <i data-lucide="clipboard-list" class="w-4 h-4 text-chiri-red"></i>
+                                <span>4. Talonarios & Papel</span>
+                            </button>
+                            <button onclick="switchBrandTab('contacto')" data-tab="contacto" class="brand-tab-btn col-span-2 sm:col-span-1 cutout-btn bg-white text-chiri-black py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5">
+                                <i data-lucide="send" class="w-4 h-4 text-chiri-blue"></i>
+                                <span>5. Pedir Ahora</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- CONTENEDOR DE PANTALLAS EN MODO BOTONES -->
+                    <div class="p-6 sm:p-8 min-h-[430px] flex flex-col justify-between bg-white">
+                        
+                        <!-- Pestaña 1: Inicio & Conexión con el Logo -->
+                        <div id="brand-tab-inicio" class="brand-tab-pane tab-fade-enter space-y-6">
+                            <div class="grid md:grid-cols-12 gap-6 items-center">
+                                <div class="md:col-span-7 space-y-4">
+                                    <span class="badge-cutout-blue text-xs">PANTALLA 1 DE 5 • BIENVENIDOS</span>
+                                    <h3 class="font-display text-3xl sm:text-5xl text-chiri-black tracking-wide leading-none">
+                                        DISEÑAMOS GUIÁNDONOS POR LA ESTÉTICA DE TU LOGO
+                                    </h3>
+                                    <p class="text-sm text-neutral-700 font-medium leading-relaxed">
+                                        En este <strong>formato por botones</strong>, tus clientes no tienen que bajar por una página larga: tocan arriba lo que buscan (Calcos, Invitaciones, Talonarios o Papelería) y se abre al instante.
+                                    </p>
+                                    <div class="flex flex-wrap gap-3 pt-1">
+                                        <button onclick="switchBrandTab('calcos')" class="cutout-btn bg-chiri-red text-white text-xs sm:text-sm px-5 py-3 rounded-xl flex items-center gap-2">
+                                            <span>Ir a Packs de Calcos</span>
+                                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                        </button>
+                                        <button onclick="switchBrandTab('papeleria')" class="cutout-btn bg-chiri-blue text-white text-xs sm:text-sm px-5 py-3 rounded-xl">
+                                            Ver Talonarios y Papelería
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-5 bg-chiri-paper border-2 border-chiri-black rounded-2xl p-5 space-y-3 shadow-[4px_4px_0px_#111111]">
+                                    <p class="font-display text-xl tracking-wide text-chiri-black">LO QUE HACEMOS EN EL ESTUDIO:</p>
+                                    <ul class="space-y-2 text-xs font-bold text-chiri-black">
+                                        <li class="bg-white p-2.5 rounded-xl border border-chiri-black flex items-center gap-2">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-chiri-red"></span>
+                                            Calcos de Mascotas / Fotos y Comunes (x5 y x10 en 4, 6 y 8 cm)
+                                        </li>
+                                        <li class="bg-white p-2.5 rounded-xl border border-chiri-black flex items-center gap-2">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-chiri-blue"></span>
+                                            Invitaciones Digitales Web (15 Años, Bodas, Eventos)
+                                        </li>
+                                        <li class="bg-white p-2.5 rounded-xl border border-chiri-black flex items-center gap-2">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-chiri-red"></span>
+                                            Talonarios personalizados (Recibos, Presupuestos, Rifas)
+                                        </li>
+                                        <li class="bg-white p-2.5 rounded-xl border border-chiri-black flex items-center gap-2">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-chiri-blue"></span>
+                                            Papelería Creativa para Fiestas y Packaging para Marcas
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pestaña 2: Calcos Personalizadas y Comunes -->
+                        <div id="brand-tab-calcos" class="brand-tab-pane hidden tab-fade-enter space-y-5">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-2 border-chiri-black pb-3">
+                                <div>
+                                    <span class="badge-cutout-red text-[10px]">PANTALLA 2 • CALCOS EN VINILO</span>
+                                    <h3 class="font-display text-3xl text-chiri-black mt-1">CALCOS DE MASCOTAS, FOTOS Y COMUNES</h3>
+                                </div>
+                                <span class="text-xs font-extrabold bg-chiri-paper border border-chiri-black px-3 py-1.5 rounded-xl">
+                                    Medidas: 4 cm • 6 cm • 8 cm
+                                </span>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="cutout-card-red rounded-2xl p-5 space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-display text-2xl text-chiri-red">1. PERSONALIZADAS (MASCOTAS / FOTOS)</span>
+                                        <span class="text-2xl">🐶📸</span>
+                                    </div>
+                                    <p class="text-xs text-neutral-700 font-medium">
+                                        Mandanos las fotos de tu perro, gato, amigos, pareja o el logo de tu negocio. Las recortamos con borde blanco tipo sticker y son resistentes al agua.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 text-xs font-extrabold">
+                                        <span class="bg-chiri-paper border border-chiri-black px-2.5 py-1 rounded-lg">Pack x 5 unidades</span>
+                                        <span class="bg-chiri-paper border border-chiri-black px-2.5 py-1 rounded-lg">Pack x 10 unidades</span>
+                                        <span class="bg-chiri-black text-white px-2.5 py-1 rounded-lg">4cm / 6cm / 8cm</span>
+                                    </div>
+                                    <button onclick="openModal('servicio', 'Pack Calcos Personalizadas Mascotas/Fotos')" class="w-full cutout-btn bg-chiri-red text-white py-2.5 rounded-xl text-xs">
+                                        Encargar Calcos con mis Fotos
+                                    </button>
+                                </div>
+
+                                <div class="cutout-card-blue rounded-2xl p-5 space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-display text-2xl text-chiri-blue">2. CALCOS COMUNES (CATÁLOGO)</span>
+                                        <span class="text-2xl">⚡🧉</span>
+                                    </div>
+                                    <p class="text-xs text-neutral-700 font-medium">
+                                        Elegí entre cientos de diseños listos para el termo, el mate o la compu: música, rock nacional, fútbol, frases, series, dibujos y estética urbana.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 text-xs font-extrabold">
+                                        <span class="bg-chiri-paper border border-chiri-black px-2.5 py-1 rounded-lg">Pack x 5 unidades</span>
+                                        <span class="bg-chiri-paper border border-chiri-black px-2.5 py-1 rounded-lg">Pack x 10 unidades</span>
+                                        <span class="bg-chiri-black text-white px-2.5 py-1 rounded-lg">4cm / 6cm / 8cm</span>
+                                    </div>
+                                    <button onclick="openModal('servicio', 'Pack Calcos Comunes (4, 6 u 8 cm)')" class="w-full cutout-btn bg-chiri-blue text-white py-2.5 rounded-xl text-xs">
+                                        Pedir Catálogo de Calcos Comunes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pestaña 3: Invitaciones Digitales Web -->
+                        <div id="brand-tab-invitaciones" class="brand-tab-pane hidden tab-fade-enter space-y-5">
+                            <div class="bg-chiri-paper border-2 border-chiri-black rounded-2xl p-6 text-center space-y-4">
+                                <span class="badge-cutout-blue text-xs">15 AÑOS • CASAMIENTOS • BAUTISMOS • CUMPLES</span>
+                                <h3 class="font-display text-3xl sm:text-4xl text-chiri-black tracking-wide">
+                                    INVITACIONES DIGITALES WEB A MEDIDA
+                                </h3>
+                                <p class="text-xs sm:text-sm text-neutral-700 max-w-xl mx-auto font-medium">
+                                    Armamos la invitación web de tu fiesta con cuenta regresiva, mapa GPS, confirmación a WhatsApp, dress code y buzón de temas para Spotify. ¡Elegí si la querés con Scroll o por Botones!
+                                </p>
+                                <div class="flex flex-wrap justify-center gap-3 pt-2">
+                                    <button onclick="setDemoCase('event'); setNavigationMode('scroll');" class="cutout-btn bg-chiri-red text-white px-5 py-3 rounded-xl text-xs flex items-center gap-2">
+                                        <i data-lucide="mouse" class="w-4 h-4"></i>
+                                        <span>Ver Ejemplo Invitación con Scroll</span>
+                                    </button>
+                                    <button onclick="setDemoCase('event'); setNavigationMode('buttons');" class="cutout-btn bg-chiri-blue text-white px-5 py-3 rounded-xl text-xs flex items-center gap-2">
+                                        <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                                        <span>Ver Ejemplo Invitación con Botones</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pestaña 4: Papelería Creativa y Talonarios -->
+                        <div id="brand-tab-papeleria" class="brand-tab-pane hidden tab-fade-enter space-y-4">
+                            <div class="border-b-2 border-chiri-black pb-2 flex items-center justify-between">
+                                <h3 class="font-display text-2xl sm:text-3xl text-chiri-black">PAPELERÍA CREATIVA, TALONARIOS Y MERCH</h3>
+                                <span class="text-xs font-bold text-chiri-red">Con el logo de tu marca o evento</span>
+                            </div>
+                            <div id="catalog-buttons-container" class="grid sm:grid-cols-2 gap-4 max-h-[340px] overflow-y-auto pr-1">
+                                <!-- Inyectado por JS -->
+                            </div>
+                        </div>
+
+                        <!-- Pestaña 5: Contacto -->
+                        <div id="brand-tab-contacto" class="brand-tab-pane hidden tab-fade-enter space-y-5">
+                            <div class="grid sm:grid-cols-2 gap-6 items-center">
+                                <div class="space-y-3">
+                                    <span class="badge-cutout-red text-xs">HABLEMOS DE TU IDEA</span>
+                                    <h3 class="font-display text-3xl text-chiri-black">¿QUÉ DISEÑAMOS HOY?</h3>
+                                    <p class="text-xs sm:text-sm text-neutral-700 font-medium">
+                                        Pasate tu logo, la foto de tu mascota o contanos de qué es tu evento y lo armamos con toda la onda de Chirimbolo Estudio.
+                                    </p>
+                                    <div class="bg-chiri-paper border-2 border-chiri-black rounded-xl p-3 text-xs font-bold space-y-1.5">
+                                        <div>📍 Chivilcoy, Buenos Aires</div>
+                                        <div>📲 Pedidos por WhatsApp e Instagram</div>
+                                    </div>
+                                </div>
+                                <div class="bg-chiri-black text-white p-5 rounded-2xl border-2 border-chiri-black space-y-3">
+                                    <h4 class="font-display text-xl tracking-wide text-amber-300">SIMULADOR DE PEDIDO RÁPIDO</h4>
+                                    <input id="quick-name" type="text" placeholder="Tu nombre..." class="w-full px-3.5 py-2.5 rounded-xl bg-neutral-900 border border-neutral-700 text-white text-xs">
+                                    <select id="quick-service" class="w-full px-3.5 py-2.5 rounded-xl bg-neutral-900 border border-neutral-700 text-white text-xs">
+                                        <option>Pack Calcos Mascotas / Fotos (x5 o x10)</option>
+                                        <option>Pack Calcos Comunes (4, 6 u 8 cm)</option>
+                                        <option>Invitación Digital Web (15s / Casamiento / Evento)</option>
+                                        <option>Talonarios Personalizados</option>
+                                        <option>Papelería Creativa para Eventos</option>
+                                        <option>Página Web con la estética de mi Logo</option>
+                                    </select>
+                                    <button onclick="openModal('presupuesto')" class="w-full cutout-btn bg-chiri-red text-white py-2.5 rounded-xl text-xs">
+                                        Enviar Consulta por WhatsApp →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Barra inferior de navegación de la App -->
+                        <div class="mt-6 pt-4 border-t-2 border-dashed border-neutral-300 flex items-center justify-between text-xs font-bold text-neutral-600">
+                            <span>Estás probando el Modo por Botones (Sin Scroll)</span>
+                            <button onclick="setNavigationMode('scroll')" class="text-chiri-red hover:underline">
+                                Cambiar a Modo Scroll Continuo →
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================================
+             CASO 2: DEMO DE INVITACIÓN DIGITAL (15 AÑOS / CASAMIENTO / EVENTO)
+             En ambos formatos: Scroll vs Botones
+             ===================================================================== -->
+        <div id="case-event-wrapper" class="hidden">
+
+            <!-- -----------------------------------------------------------------
+                 2A. INVITACIÓN EN MODO SCROLL CONTINUO
+                 ----------------------------------------------------------------- -->
+            <div id="event-scroll-view" class="space-y-12 pb-20">
+                <section class="max-w-4xl mx-auto px-4 pt-6">
+                    <div class="cutout-card rounded-3xl p-8 sm:p-14 bg-chiri-black text-white text-center relative overflow-hidden">
+                        <span class="badge-cutout-red text-xs uppercase mb-4">DEMO INVITACIÓN WEB CON SCROLL • CHIRIMBOLO ESTUDIO</span>
+                        <h1 class="font-display text-5xl sm:text-7xl tracking-wide text-white mt-3">
+                            MIS 15 AÑOS • VALENTINA
+                        </h1>
+                        <p class="text-sm sm:text-base text-neutral-300 max-w-md mx-auto mt-3">
+                            En el <strong>Modo Scroll</strong> los invitados deslizan hacia abajo para ver la cuenta regresiva, mapas, dress code, alias y confirmar asistencia.
+                        </p>
+
+                        <!-- Cuenta regresiva -->
+                        <div class="grid grid-cols-4 gap-2.5 sm:gap-4 max-w-md mx-auto my-8">
+                            <div class="bg-neutral-900 border-2 border-white rounded-2xl p-3">
+                                <span class="font-display text-2xl sm:text-4xl text-chiri-red block">24</span>
+                                <span class="text-[10px] uppercase font-bold text-neutral-400">Días</span>
+                            </div>
+                            <div class="bg-neutral-900 border-2 border-white rounded-2xl p-3">
+                                <span class="font-display text-2xl sm:text-4xl text-white block">18</span>
+                                <span class="text-[10px] uppercase font-bold text-neutral-400">Horas</span>
+                            </div>
+                            <div class="bg-neutral-900 border-2 border-white rounded-2xl p-3">
+                                <span class="font-display text-2xl sm:text-4xl text-white block">45</span>
+                                <span class="text-[10px] uppercase font-bold text-neutral-400">Min</span>
+                            </div>
+                            <div class="bg-neutral-900 border-2 border-white rounded-2xl p-3">
+                                <span class="cd-secs font-display text-2xl sm:text-4xl text-sky-400 block">39</span>
+                                <span class="text-[10px] uppercase font-bold text-neutral-400">Seg</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="#evento-detalles-scroll" class="cutout-btn bg-chiri-red text-white text-xs sm:text-sm px-6 py-3 rounded-xl">
+                                Deslizar a los Detalles ↓
+                            </a>
+                            <button onclick="setNavigationMode('buttons')" class="cutout-btn bg-chiri-blue text-white text-xs sm:text-sm px-5 py-3 rounded-xl">
+                                Ver esta Invitación con Botones →
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="evento-detalles-scroll" class="max-w-4xl mx-auto px-4 grid sm:grid-cols-3 gap-6">
+                    <div class="cutout-card-red rounded-2xl p-6 text-center space-y-3 bg-white">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-chiri-red text-white border-2 border-chiri-black flex items-center justify-center">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display text-2xl text-chiri-black">CUÁNDO & DÓNDE</h3>
+                        <p class="text-xs text-neutral-700 font-medium">Sábado 21:30 hs<br><strong>Quinta Los Aromos</strong><br>Chivilcoy, Bs. As.</p>
+                        <button onclick="openModal('mapa')" class="w-full cutout-btn bg-chiri-black text-white text-xs py-2.5 rounded-xl">
+                            Abrir GPS Google Maps
+                        </button>
+                    </div>
+
+                    <div class="cutout-card-blue rounded-2xl p-6 text-center space-y-3 bg-white">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-chiri-blue text-white border-2 border-chiri-black flex items-center justify-center">
+                            <i data-lucide="gift" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display text-2xl text-chiri-black">DRESS CODE & REGALO</h3>
+                        <p class="text-xs text-neutral-700 font-medium">Dress Code: <strong>Elegante Sport</strong><br>Tocá abajo para ver el Alias:</p>
+                        <button onclick="openModal('regalo')" class="w-full cutout-btn bg-chiri-blue text-white text-xs py-2.5 rounded-xl">
+                            Ver Alias / CBU
+                        </button>
+                    </div>
+
+                    <div class="cutout-card-red rounded-2xl p-6 text-center space-y-3 bg-white">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-chiri-black text-white border-2 border-chiri-black flex items-center justify-center">
+                            <i data-lucide="music" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display text-2xl text-chiri-black">MÚSICA & RSVP</h3>
+                        <p class="text-xs text-neutral-700 font-medium">Sugerí tu canción favorita y confirmá tu lugar por WhatsApp.</p>
+                        <button onclick="openModal('rsvp')" class="w-full cutout-btn bg-chiri-red text-white text-xs py-2.5 rounded-xl">
+                            Confirmar Asistencia
+                        </button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- -----------------------------------------------------------------
+                 2B. INVITACIÓN EN MODO BOTONES (TARJETA COMPACTA SIN SCROLL)
+                 ----------------------------------------------------------------- -->
+            <div id="event-buttons-view" class="hidden max-w-xl mx-auto px-4 py-8">
+                <div class="cutout-card rounded-3xl overflow-hidden bg-chiri-black text-white">
+                    <div class="p-6 text-center border-b border-neutral-800">
+                        <span class="badge-cutout-red text-[10px] uppercase">INVITACIÓN WEB POR BOTONES (SIN SCROLL)</span>
+                        <h2 class="font-display text-4xl tracking-wide text-white mt-2">MIS 15 • VALENTINA</h2>
+                        <p class="text-xs text-neutral-400 mt-1">Tocá los 4 botones de abajo para cambiar de sección</p>
+                    </div>
+
+                    <div class="p-6 min-h-[240px] flex flex-col items-center justify-center text-center bg-neutral-900">
+                        <div id="ev-tab-reloj" class="ev-tab-pane tab-fade-enter space-y-4 w-full">
+                            <p class="text-xs uppercase font-bold text-amber-300">Cuenta Regresiva en Vivo:</p>
+                            <div class="grid grid-cols-4 gap-2 max-w-xs mx-auto">
+                                <div class="bg-black p-2.5 rounded-xl border border-neutral-700">
+                                    <span class="font-display text-2xl text-chiri-red block">24</span>
+                                    <span class="text-[10px] text-neutral-400">Días</span>
+                                </div>
+                                <div class="bg-black p-2.5 rounded-xl border border-neutral-700">
+                                    <span class="font-display text-2xl text-white block">18</span>
+                                    <span class="text-[10px] text-neutral-400">Hs</span>
+                                </div>
+                                <div class="bg-black p-2.5 rounded-xl border border-neutral-700">
+                                    <span class="font-display text-2xl text-white block">45</span>
+                                    <span class="text-[10px] text-neutral-400">Min</span>
+                                </div>
+                                <div class="bg-black p-2.5 rounded-xl border border-neutral-700">
+                                    <span class="cd-secs font-display text-2xl text-sky-400 block">39</span>
+                                    <span class="text-[10px] text-neutral-400">Seg</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="ev-tab-lugar" class="ev-tab-pane hidden tab-fade-enter space-y-3">
+                            <h3 class="font-display text-2xl text-white">LUGAR & HORARIO</h3>
+                            <p class="text-xs text-neutral-300">Sábado 21:30 hs • Quinta Los Aromos (Chivilcoy)</p>
+                            <button onclick="openModal('mapa')" class="cutout-btn bg-chiri-blue text-white text-xs px-5 py-2.5 rounded-xl">
+                                Ver Mapa GPS
+                            </button>
+                        </div>
+
+                        <div id="ev-tab-fiesta" class="ev-tab-pane hidden tab-fade-enter space-y-3">
+                            <h3 class="font-display text-2xl text-white">DRESS CODE, MÚSICA & ALIAS</h3>
+                            <p class="text-xs text-neutral-300">Vestimenta: Elegante Sport</p>
+                            <div class="flex justify-center gap-2">
+                                <button onclick="openModal('musica')" class="cutout-btn bg-chiri-red text-white text-xs px-4 py-2 rounded-xl">+ Sugerir Canción</button>
+                                <button onclick="openModal('regalo')" class="cutout-btn bg-white text-chiri-black text-xs px-4 py-2 rounded-xl">Copiar Alias</button>
+                            </div>
+                        </div>
+
+                        <div id="ev-tab-confirmar" class="ev-tab-pane hidden tab-fade-enter space-y-3">
+                            <h3 class="font-display text-2xl text-white">CONFIRMAR ASISTENCIA</h3>
+                            <p class="text-xs text-neutral-300 max-w-xs mx-auto">Confirmá directo por WhatsApp con 1 clic.</p>
+                            <button onclick="openModal('rsvp')" class="cutout-btn bg-chiri-red text-white text-xs px-6 py-2.5 rounded-xl">
+                                Confirmar mi Lugar Ahora
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-chiri-black border-t border-neutral-800">
+                        <div class="grid grid-cols-4 gap-2">
+                            <button onclick="switchEventTab('reloj')" data-evtab="reloj" class="ev-nav-btn bg-chiri-red text-white p-2.5 rounded-xl flex flex-col items-center gap-1 text-xs font-bold border border-white">
+                                <i data-lucide="clock" class="w-4 h-4"></i>
+                                <span>Cuenta</span>
+                            </button>
+                            <button onclick="switchEventTab('lugar')" data-evtab="lugar" class="ev-nav-btn bg-neutral-900 text-neutral-300 p-2.5 rounded-xl flex flex-col items-center gap-1 text-xs font-bold border border-neutral-700">
+                                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                <span>Lugar</span>
+                            </button>
+                            <button onclick="switchEventTab('fiesta')" data-evtab="fiesta" class="ev-nav-btn bg-neutral-900 text-neutral-300 p-2.5 rounded-xl flex flex-col items-center gap-1 text-xs font-bold border border-neutral-700">
+                                <i data-lucide="music" class="w-4 h-4"></i>
+                                <span>Fiesta</span>
+                            </button>
+                            <button onclick="switchEventTab('confirmar')" data-evtab="confirmar" class="ev-nav-btn bg-neutral-900 text-neutral-300 p-2.5 rounded-xl flex flex-col items-center gap-1 text-xs font-bold border border-neutral-700">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                                <span>Confirmar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================================================
+         MODAL MULTIPROPÓSITO (SIN USAR ALERT)
+         ========================================================================= -->
+    <div id="custom-modal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="cutout-card rounded-3xl max-w-md w-full p-6 bg-white relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-lg bg-chiri-red text-white font-bold flex items-center justify-center border-2 border-chiri-black">
+                ✕
+            </button>
+            <div id="modal-body-content" class="space-y-4">
+                <!-- Se inyecta por JS -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =========================================================================
+         PIE DE PÁGINA CON EL LOGO DE CHIRIMBOLO ESTUDIO
+         ========================================================================= -->
+    <footer class="bg-white border-t-4 border-chiri-black py-8 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="chiri-logo-word text-2xl">
+                    <span class="grunge-ink">CHI</span>
+                    <span class="cutout-r">R</span>
+                    <span class="grunge-ink">IMB</span>
+                    <span class="cutout-o">O</span>
+                    <span class="grunge-ink">LO</span>
+                </div>
+                <span class="text-xs font-extrabold uppercase tracking-wider text-neutral-600">
+                    • Calcos • Invitaciones Web • Papelería Creativa • Talonarios
+                </span>
+            </div>
+            <div class="text-xs font-bold text-neutral-600">
+                Demostrador Oficial de Formatos Web (<span class="text-chiri-red">Con Scroll</span> vs <span class="text-chiri-blue">Con Botones</span>)
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- =========================================================================
+         LÓGICA JAVASCRIPT COMPLETA
+         ========================================================================= -->
+    <script>
+        let currentCase = 'brand';
+        let currentMode = 'scroll';
+
+        // Estado del configurador de calcos
+        const stickerState = {
+            type: 'Mascotas o Fotos Personalizadas',
+            pack: 'Pack x 10 Unidades',
+            size: '6 cm'
+        };
+
+        // Catálogo completo real de Chirimbolo Estudio + agregados estratégicos
+        const catalogData = [
+            {
+                id: 1,
+                category: 'calcos',
+                badgeColor: 'badge-cutout-red',
+                tag: 'Calcos Personalizadas',
+                title: 'Calcos de Mascotas o Fotos (Packs x5 y x10)',
+                sizes: '4 cm, 6 cm y 8 cm',
+                desc: 'Mandanos las fotos de tu perro, gato, familia o amigos. Las troquelamos con borde blanco y son 100% resistentes al agua para el termo o el celu.'
+            },
+            {
+                id: 2,
+                category: 'calcos',
+                badgeColor: 'badge-cutout-blue',
+                tag: 'Calcos de Catálogo',
+                title: 'Packs de Calcos Comunes (x5 o x10 u.)',
+                sizes: '4 cm, 6 cm y 8 cm',
+                desc: 'Cientos de diseños listos para elegir: rock nacional, fútbol, frases, memes, anime, series y onda urbana Chirimbolo.'
+            },
+            {
+                id: 3,
+                category: 'web',
+                badgeColor: 'badge-cutout-red',
+                tag: 'Eventos & Fiestas',
+                title: 'Invitaciones Digitales Web (15s, Casamientos, Eventos)',
+                sizes: 'Con Scroll o Con Botones',
+                desc: 'Página interactiva con cuenta regresiva, GPS al salón, playlist de Spotify, alias para regalos y confirmación por WhatsApp.'
+            },
+            {
+                id: 4,
+                category: 'talonarios',
+                badgeColor: 'badge-cutout-blue',
+                tag: 'Comercios & Marcas',
+                title: 'Talonarios Personalizados con tu Logo',
+                sizes: 'Simple o Duplicado',
+                desc: 'Talonarios de presupuestos, recibos, pedidos, turnos, vouchers de regalo o rifas numeradas diseñadas con la estética de tu negocio.'
+            },
+            {
+                id: 5,
+                category: 'papeleria',
+                badgeColor: 'badge-cutout-red',
+                tag: 'Papelería Creativa',
+                title: 'Papelería para Eventos, Candy Bar & Souvenirs',
+                sizes: '100% Temático',
+                desc: 'Bolsitas personalizadas, stickers para golosinas, toppers de torta, banderines, tags colgantes, números de mesa y señalética para fiestas.'
+            },
+            {
+                id: 6,
+                category: 'talonarios',
+                badgeColor: 'badge-cutout-blue',
+                tag: 'Packaging & Branding',
+                title: 'Kit Emprendedor: Tarjetas + Cierra Bolsas + Tags',
+                sizes: 'A medida de tu Logo',
+                desc: 'Tarjetas de agradecimiento, stickers cierra bolsas, etiquetas autoadhesivas para envíos, menús QR y flyers promocionales.'
+            }
+        ];
+
+        // Simulador en vivo de "Cómo nos guiamos por el logo del cliente"
+        function previewClientStyle(styleKey) {
+            const box = document.getElementById('live-identity-preview');
+            const btns = ['chirimbolo', 'boda', 'pastel'];
+
+            btns.forEach(k => {
+                const b = document.getElementById(`style-btn-${k}`);
+                if (k === styleKey) {
+                    b.className = 'p-2 rounded-xl border-2 border-amber-400 bg-white/15 text-white text-xs font-bold text-center transition';
+                } else {
+                    b.className = 'p-2 rounded-xl border border-neutral-700 bg-neutral-800 text-neutral-300 hover:text-white text-xs font-bold text-center transition';
+                }
+            });
+
+            if (styleKey === 'chirimbolo') {
+                box.className = 'rounded-2xl p-5 transition-all duration-300 bg-[#F6F4EE] text-[#111111] border-2 border-[#111111] shadow-[5px_5px_0px_#E30613]';
+                box.innerHTML = `
+                    <div class="flex items-center justify-between border-b-2 border-[#111111] pb-3 mb-3">
+                        <div class="chiri-logo-word text-2xl">
+                            <span class="grunge-ink">CHI</span><span class="cutout-r">R</span><span class="grunge-ink">IMB</span><span class="cutout-o">O</span><span class="grunge-ink">LO</span>
+                        </div>
+                        <span class="badge-cutout-blue text-[10px]">ESTÉTICA DEL LOGO APLICADA</span>
+                    </div>
+                    <p class="text-xs font-bold text-neutral-800 mb-3">
+                        Mirá cómo tomamos el <strong>Rojo (#E30613)</strong> de la R, el <strong>Azul (#0062B8)</strong> de la O y las letras negras condensadas para que toda la web hable el mismo idioma.
+                    </p>
+                    <div class="flex gap-2">
+                        <span class="bg-[#E30613] text-white text-xs font-black px-3 py-1.5 rounded-lg border-2 border-[#111111]">Botón Rojo del Logo</span>
+                        <span class="bg-[#0062B8] text-white text-xs font-black px-3 py-1.5 rounded-lg border-2 border-[#111111]">Detalle Azul del Logo</span>
+                    </div>
+                `;
+            } else if (styleKey === 'boda') {
+                box.className = 'rounded-2xl p-5 transition-all duration-300 bg-[#1A1817] text-[#F5EFE6] border-2 border-[#D4AF37] shadow-[5px_5px_0px_#D4AF37]';
+                box.innerHTML = `
+                    <div class="flex items-center justify-between border-b border-[#D4AF37]/40 pb-3 mb-3">
+                        <div class="font-serif italic text-2xl text-[#D4AF37] tracking-widest">Sofía & Mateo • Boda</div>
+                        <span class="bg-[#D4AF37] text-black font-bold text-[10px] px-2.5 py-0.5 rounded-full">ADAPTADO A EVENTO ELEGANTE</span>
+                    </div>
+                    <p class="text-xs text-[#E6DEC8] mb-3">
+                        Si tu cliente tiene unos <strong>15 Años o Casamiento elegante</strong>, cambiamos toda la tipografía, los bordes y la paleta a Negro, Champagne y Dorado para su invitación web y su papelería.
+                    </p>
+                    <div class="flex gap-2">
+                        <span class="bg-[#D4AF37] text-black text-xs font-bold px-3 py-1.5 rounded-full">Confirmar Asistencia</span>
+                        <span class="border border-[#D4AF37] text-[#D4AF37] text-xs font-bold px-3 py-1.5 rounded-full">Ver Ubicación</span>
+                    </div>
+                `;
+            } else if (styleKey === 'pastel') {
+                box.className = 'rounded-2xl p-5 transition-all duration-300 bg-[#FFF8F3] text-[#4A3525] border-2 border-[#D97757] shadow-[5px_5px_0px_#D97757]';
+                box.innerHTML = `
+                    <div class="flex items-center justify-between border-b border-[#D97757]/30 pb-3 mb-3">
+                        <div class="font-grotesk font-bold text-xl text-[#D97757]">🌸 Olivia Pastelería & Deco</div>
+                        <span class="bg-[#D97757] text-white font-bold text-[10px] px-2.5 py-0.5 rounded-lg">ADAPTADO A EMPRENDIMIENTO</span>
+                    </div>
+                    <p class="text-xs text-[#6E503B] mb-3">
+                        Si un comercio nos trae un <strong>logo cálido o pastel</strong>, tanto sus talonarios, sus stickers cierra bolsas como su catálogo web adoptan esos mismos tonos suaves.
+                    </p>
+                    <div class="flex gap-2">
+                        <span class="bg-[#D97757] text-white text-xs font-bold px-3 py-1.5 rounded-xl">Ver Catálogo Dulce</span>
+                        <span class="bg-[#E8F0E8] text-[#2E5A36] border border-[#2E5A36] text-xs font-bold px-3 py-1.5 rounded-xl">Pedir por WhatsApp</span>
+                    </div>
+                `;
+            }
+        }
+
+        // Actualizar el Armador de Packs de Calcos (Mascotas/Fotos vs Comunes | x5 o x10 | 4, 6 y 8 cm)
+        function updateStickerBuilder(field, value) {
+            stickerState[field] = value;
+
+            // Actualizar botones de Tipo
+            const btnCustom = document.getElementById('stk-type-custom');
+            const btnCommon = document.getElementById('stk-type-common');
+            if (stickerState.type.includes('Mascotas')) {
+                btnCustom.className = 'stk-option-btn cutout-btn bg-chiri-red text-white p-3.5 rounded-2xl text-left flex items-start gap-3';
+                btnCommon.className = 'stk-option-btn cutout-btn bg-white text-chiri-black p-3.5 rounded-2xl text-left flex items-start gap-3';
+            } else {
+                btnCommon.className = 'stk-option-btn cutout-btn bg-chiri-blue text-white p-3.5 rounded-2xl text-left flex items-start gap-3';
+                btnCustom.className = 'stk-option-btn cutout-btn bg-white text-chiri-black p-3.5 rounded-2xl text-left flex items-start gap-3';
+            }
+
+            // Actualizar botones de Pack (5 vs 10)
+            const btnPack5 = document.getElementById('stk-pack-5');
+            const btnPack10 = document.getElementById('stk-pack-10');
+            if (stickerState.pack.includes('5')) {
+                btnPack5.className = 'cutout-btn bg-chiri-blue text-white py-3 px-4 rounded-xl text-center';
+                btnPack10.className = 'cutout-btn bg-white text-chiri-black py-3 px-4 rounded-xl text-center';
+            } else {
+                btnPack10.className = 'cutout-btn bg-chiri-blue text-white py-3 px-4 rounded-xl text-center';
+                btnPack5.className = 'cutout-btn bg-white text-chiri-black py-3 px-4 rounded-xl text-center';
+            }
+
+            // Actualizar botones de Medida (4 cm, 6 cm, 8 cm) y el comparador visual
+            ['4', '6', '8'].forEach(num => {
+                const btnSize = document.getElementById(`stk-size-${num}`);
+                const visStk = document.getElementById(`visual-stk-${num}`);
+                if (stickerState.size === `${num} cm`) {
+                    btnSize.className = 'cutout-btn bg-chiri-black text-white py-3 px-2 rounded-xl text-center';
+                    visStk.classList.remove('opacity-75');
+                    visStk.classList.add('scale-110');
+                } else {
+                    btnSize.className = 'cutout-btn bg-white text-chiri-black py-3 px-2 rounded-xl text-center';
+                    visStk.classList.add('opacity-75');
+                    visStk.classList.remove('scale-110');
+                }
+            });
+
+            document.getElementById('active-size-badge').textContent = `Seleccionado: ${stickerState.size}`;
+            document.getElementById('sticker-summary-text').textContent = `${stickerState.type} • ${stickerState.pack} • Medida ${stickerState.size}`;
+        }
+
+        function orderStickerPack() {
+            const summary = `${stickerState.type} (${stickerState.pack} de ${stickerState.size})`;
+            openModal('servicio', summary);
+        }
+
+        // Renderizar Catálogo en Modo Scroll y en Modo Botones
+        function renderCatalog(filter = 'all') {
+            const scrollContainer = document.getElementById('catalog-items-container');
+            const buttonsContainer = document.getElementById('catalog-buttons-container');
+
+            const filtered = filter === 'all' ? catalogData : catalogData.filter(i => i.category === filter);
+
+            const html = filtered.map((item, idx) => `
+                <div class="${idx % 2 === 0 ? 'cutout-card-red' : 'cutout-card-blue'} rounded-2xl p-6 flex flex-col justify-between space-y-4 bg-white">
+                    <div class="space-y-2.5">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="${item.badgeColor} text-[10px] uppercase">${item.tag}</span>
+                            <span class="text-xs font-extrabold bg-chiri-paper border border-chiri-black px-2.5 py-0.5 rounded-lg">${item.sizes}</span>
+                        </div>
+                        <h4 class="font-display text-2xl tracking-wide text-chiri-black leading-snug">${item.title}</h4>
+                        <p class="text-xs text-neutral-700 font-medium leading-relaxed">${item.desc}</p>
+                    </div>
+                    <button onclick="openModal('servicio', '${item.title}')" class="cutout-btn bg-chiri-black hover:bg-chiri-red text-white text-xs py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        <span>Consultar por este producto</span>
+                    </button>
+                </div>
+            `).join('');
+
+            scrollContainer.innerHTML = html;
+            buttonsContainer.innerHTML = html;
+            lucide.createIcons();
+        }
+
+        function filterCatalog(cat) {
+            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = 'cat-filter-btn cutout-btn bg-chiri-black text-white text-xs px-4 py-2 rounded-xl';
+                } else {
+                    btn.className = 'cat-filter-btn cutout-btn bg-white text-chiri-black text-xs px-4 py-2 rounded-xl';
+                }
+            });
+            renderCatalog(cat);
+        }
+
+        // Cambiar entre Web Chirimbolo y Demo Fiesta
+        function setDemoCase(demoCase) {
+            currentCase = demoCase;
+            const btnBrand = document.getElementById('btn-case-brand');
+            const btnEvent = document.getElementById('btn-case-event');
+
+            if (demoCase === 'brand') {
+                btnBrand.className = 'px-3 py-1.5 rounded-lg font-extrabold transition-all flex items-center gap-1.5 bg-white text-chiri-black shadow';
+                btnEvent.className = 'px-3 py-1.5 rounded-lg font-bold transition-all flex items-center gap-1.5 text-neutral-300 hover:text-white';
+            } else {
+                btnEvent.className = 'px-3 py-1.5 rounded-lg font-extrabold transition-all flex items-center gap-1.5 bg-white text-chiri-black shadow';
+                btnBrand.className = 'px-3 py-1.5 rounded-lg font-bold transition-all flex items-center gap-1.5 text-neutral-300 hover:text-white';
+            }
+            updateVisibleViews();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Cambiar entre MODO SCROLL y MODO BOTONES
+        function setNavigationMode(mode) {
+            currentMode = mode;
+            const btnScroll = document.getElementById('btn-mode-scroll');
+            const btnButtons = document.getElementById('btn-mode-buttons');
+
+            if (mode === 'scroll') {
+                btnScroll.className = 'px-3.5 py-1.5 rounded-lg font-extrabold transition-all flex items-center gap-1.5 bg-chiri-red text-white shadow';
+                btnButtons.className = 'px-3.5 py-1.5 rounded-lg font-extrabold transition-all flex items-center gap-1.5 text-neutral-300 hover:text-white';
+            } else {
+                btnButtons.className = 'px-3.5 py-1.5 rounded-lg font-extrabold transition-all flex items-center gap-1.5 bg-chiri-blue text-white shadow';
+                btnScroll.className = 'px-3.5 py-1.5 rounded-lg font-extrabold transition-all flex items-center gap-1.5 text-neutral-300 hover:text-white';
+            }
+            updateVisibleViews();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateVisibleViews() {
+            const brandWrapper = document.getElementById('case-brand-wrapper');
+            const eventWrapper = document.getElementById('case-event-wrapper');
+            const brandScroll = document.getElementById('brand-scroll-view');
+            const brandButtons = document.getElementById('brand-buttons-view');
+            const eventScroll = document.getElementById('event-scroll-view');
+            const eventButtons = document.getElementById('event-buttons-view');
+            const explainerText = document.getElementById('explainer-text');
+
+            if (currentCase === 'brand') {
+                brandWrapper.classList.remove('hidden');
+                eventWrapper.classList.add('hidden');
+                if (currentMode === 'scroll') {
+                    brandScroll.classList.remove('hidden');
+                    brandButtons.classList.add('hidden');
+                    explainerText.innerHTML = '<strong>Vista activa: Web Chirimbolo con Scroll Continuo.</strong> El cliente desliza hacia abajo para ver la estética del logo, armar su pack de calcos y ver el catálogo.';
+                } else {
+                    brandScroll.classList.add('hidden');
+                    brandButtons.classList.remove('hidden');
+                    explainerText.innerHTML = '<strong>Vista activa: Web Chirimbolo por Botones (Sin Scroll).</strong> Formato estilo App: el cliente toca los 5 botones superiores para cambiar de pantalla.';
+                }
+            } else {
+                brandWrapper.classList.add('hidden');
+                eventWrapper.classList.remove('hidden');
+                if (currentMode === 'scroll') {
+                    eventScroll.classList.remove('hidden');
+                    eventButtons.classList.add('hidden');
+                    explainerText.innerHTML = '<strong>Vista activa: Invitación Digital con Scroll.</strong> Ideal para recorrer toda la historia, cuenta regresiva, mapas y confirmar asistencia.';
+                } else {
+                    eventScroll.classList.add('hidden');
+                    eventButtons.classList.remove('hidden');
+                    explainerText.innerHTML = '<strong>Vista activa: Invitación Digital por Botones.</strong> Tarjeta fija donde el invitado toca Cuenta, Lugar, Fiesta o Confirmar.';
+                }
+            }
+        }
+
+        // Cambiar pestaña en Modo Botones (Chirimbolo)
+        function switchBrandTab(tabName) {
+            document.querySelectorAll('.brand-tab-pane').forEach(p => p.classList.add('hidden'));
+            document.getElementById(`brand-tab-${tabName}`).classList.remove('hidden');
+
+            document.querySelectorAll('.brand-tab-btn').forEach(btn => {
+                if (btn.dataset.tab === tabName) {
+                    btn.className = 'brand-tab-btn cutout-btn bg-chiri-red text-white py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5';
+                } else {
+                    btn.className = 'brand-tab-btn cutout-btn bg-white text-chiri-black py-2.5 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5';
+                }
+            });
+        }
+
+        // Cambiar pestaña en Modo Botones (Invitación)
+        function switchEventTab(tabName) {
+            document.querySelectorAll('.ev-tab-pane').forEach(p => p.classList.add('hidden'));
+            document.getElementById(`ev-tab-${tabName}`).classList.remove('hidden');
+
+            document.querySelectorAll('.ev-nav-btn').forEach(btn => {
+                if (btn.dataset.evtab === tabName) {
+                    btn.className = 'ev-nav-btn bg-chiri-red text-white p-2.5 rounded-xl flex flex-col items-center gap-1 text-xs font-bold border border-white';
+                } else {
+                    btn.className = 'ev-nav-btn bg-neutral-900 text-neutral-300 p-2.5 rounded-xl flex flex-col items-center gap-1 text-xs font-bold border border-neutral-700';
+                }
+            });
+        }
+
+        // Modales interactivos
+        function openModal(type, extraTitle = '') {
+            const modal = document.getElementById('custom-modal');
+            const content = document.getElementById('modal-body-content');
+
+            if (type === 'presupuesto' || type === 'servicio') {
+                content.innerHTML = `
+                    <div class="space-y-3">
+                        <span class="badge-cutout-red text-[10px] uppercase">CHIRIMBOLO ESTUDIO</span>
+                        <h3 class="font-display text-2xl text-chiri-black tracking-wide">${extraTitle ? extraTitle : 'HACER UNA CONSULTA'}</h3>
+                        <p class="text-xs text-neutral-600 font-medium">
+                            Así recibe tu cliente un cuadro súper claro para mandarte su pedido directo a tu WhatsApp:
+                        </p>
+                        <input type="text" placeholder="Tu Nombre..." class="w-full px-3.5 py-2.5 rounded-xl border-2 border-chiri-black text-xs font-bold">
+                        <select class="w-full px-3.5 py-2.5 rounded-xl border-2 border-chiri-black text-xs font-bold bg-chiri-paper">
+                            <option>Quiero una Web / Invitación con Scroll</option>
+                            <option>Quiero una Web / Invitación con Botones</option>
+                            <option>Pack de Calcos Mascotas / Fotos (x5 o x10)</option>
+                            <option>Pack de Calcos Comunes (4, 6 u 8 cm)</option>
+                            <option>Talonarios o Papelería Creativa</option>
+                        </select>
+                        <button onclick="closeModal()" class="w-full cutout-btn bg-chiri-red text-white py-3 rounded-xl text-xs">
+                            Simular Envío a WhatsApp ✓
+                        </button>
+                    </div>
+                `;
+            } else if (type === 'mapa') {
+                content.innerHTML = `
+                    <div class="text-center space-y-3">
+                        <span class="badge-cutout-blue text-xs">GPS DEL EVENTO</span>
+                        <h3 class="font-display text-2xl text-chiri-black">QUINTA LOS AROMOS</h3>
+                        <div class="bg-chiri-paper border-2 border-chiri-black rounded-2xl p-6 text-xs font-bold">
+                            📍 Se abre Google Maps en el celular del invitado con la ruta exacta al salón.
+                        </div>
+                        <button onclick="closeModal()" class="w-full cutout-btn bg-chiri-black text-white py-2.5 rounded-xl text-xs">Cerrar</button>
+                    </div>
+                `;
+            } else if (type === 'regalo') {
+                content.innerHTML = `
+                    <div class="text-center space-y-3">
+                        <span class="badge-cutout-red text-xs">MESA DE REGALOS</span>
+                        <h3 class="font-display text-2xl text-chiri-black">ALIAS BANCARIO</h3>
+                        <div class="bg-chiri-paper border-2 border-chiri-black rounded-xl p-3 font-mono font-bold text-sm">
+                            CHIRIMBOLO.EVENTOS.MP
+                        </div>
+                        <button onclick="this.textContent='¡Alias Copiado! ✓'; this.classList.replace('bg-chiri-blue','bg-emerald-600');" class="w-full cutout-btn bg-chiri-blue text-white py-2.5 rounded-xl text-xs">
+                            Copiar Alias con 1 Toque
+                        </button>
+                    </div>
+                `;
+            } else if (type === 'musica' || type === 'rsvp') {
+                content.innerHTML = `
+                    <div class="space-y-3">
+                        <span class="badge-cutout-red text-xs">INTERACCIÓN EN VIVO</span>
+                        <h3 class="font-display text-2xl text-chiri-black">${type === 'musica' ? 'SUGERIR CANCIÓN PARA LA FIESTA' : 'CONFIRMAR ASISTENCIA (RSVP)'}</h3>
+                        <input type="text" placeholder="${type === 'musica' ? 'Artista y nombre del tema...' : 'Nombre y Apellido...'}" class="w-full px-3.5 py-2.5 rounded-xl border-2 border-chiri-black text-xs font-bold">
+                        <button onclick="closeModal()" class="w-full cutout-btn bg-chiri-red text-white py-2.5 rounded-xl text-xs">
+                            Enviar por WhatsApp ✓
+                        </button>
+                    </div>
+                `;
+            }
+
+            modal.classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('custom-modal').classList.add('hidden');
+        }
+
+        // Reloj segundero para las demos de invitación
+        function startCountdown() {
+            let secs = 39;
+            setInterval(() => {
+                secs = secs > 0 ? secs - 1 : 59;
+                document.querySelectorAll('.cd-secs').forEach(el => {
+                    el.textContent = secs < 10 ? '0' + secs : secs;
+                });
+            }, 1000);
+        }
+
+        window.onload = function() {
+            previewClientStyle('chirimbolo');
+            renderCatalog('all');
+            startCountdown();
+            lucide.createIcons();
+        };
+    </script>
+</body>
+</html>
